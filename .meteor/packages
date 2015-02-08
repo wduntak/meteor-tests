@@ -10,3 +10,6 @@ underscore
 iron:router
 ecwyne:polymer-elements
 ecwyne:polymer
+useraccounts:polymer
+accounts-password
+useraccounts:core

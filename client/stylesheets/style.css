@@ -1,0 +1,29 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+core-toolbar {
+	/*background: linear-gradient(180deg, #fbb34f, #f79c1e);*/
+	background: none;
+}
+
+/* Login Style */
+.layout-main {
+}
+
+.at-full-page-form {
+	max-width: 300px;
+	padding: 20px;
+	margin: auto;
+}
+
+.at-form {
+}
+
+.at-btn {
+	width: 50%;
+}
+
+#at-nav-button {
+	cursor: pointer;
+}
