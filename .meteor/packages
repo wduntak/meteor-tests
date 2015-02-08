@@ -8,3 +8,5 @@ meteor-platform
 insecure
 underscore
 iron:router
+ecwyne:polymer-elements
+ecwyne:polymer
