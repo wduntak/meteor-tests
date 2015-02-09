@@ -1,0 +1,13 @@
+<template name="errors">
+  <div class="errors">
+    {{#each errors}}
+      {{> error}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="error">
+  <paper-toast id="toast1" text="{{message}}">
+	<core-icon mini icon="close" onclick="document.querySelector('#toast1').hide()"></core-icon>
+  </paper-toast>
+</template>
