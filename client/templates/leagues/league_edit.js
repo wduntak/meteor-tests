@@ -1,3 +1,16 @@
+Template.leagueEdit.created = function() {
+	Session.set('leagueEditErrors', {});
+}
+
+Template.leagueEdit.helpers({
+	errorMessage: function(field) {
+		return Session.get('leagueEditErrors')[field];
+	},
+	errorClass: function (field) {
+		return !!Session.get('leagueEditErrors')[field] ? 'has-error' : '';
+	}
+});
+
 Template.leagueEdit.events({
 	'submit form': function(e) {
 		e.preventDefault();
@@ -10,6 +23,10 @@ Template.leagueEdit.events({
 			address: $(e.target).find('[name=address]').val(),
 			name: $(e.target).find('[name=name]').val()
 		};
+
+		var errors = validateLeague(leagueProperties);
+		if (errors.name || errors.url || errors.address)
+			return Session.set('leagueEditErrors', errors);
 
 		Leagues.update(currentLeagueId, {$set: leagueProperties}, function(error) {
 			if (error) {

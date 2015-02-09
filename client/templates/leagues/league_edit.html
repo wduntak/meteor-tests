@@ -1,8 +1,17 @@
 <template name="leagueEdit">
 	<form>
+	<div class="{{errorClass 'name'}}">
 		<input name="name" id="name" type="text" value="{{name}}" placeholder="Your league name"/>
+		<span class="help-block">{{errorMessage 'name'}}</span>
+	</div>
+	<div class="{{errorClass 'address'}}">
 		<input name="address" id="address" type="text" value="{{address}}" placeholder="Your address"/>
+		<span class="help-block">{{errorMessage 'address'}}</span>
+	</div>
+	<div class="{{errorClass 'url'}}">
 		<input name="url" id="url" type="text" value="{{url}}" placeholder="Your league url"/>
+		<span class="help-block">{{errorMessage 'url'}}</span>
+	</div>
 	    <input type="submit" value="Submit">
 
 	    <a class="delete" href="#"><paper-fab mini icon="delete"></paper-fab></a>
