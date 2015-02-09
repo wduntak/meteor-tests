@@ -18,7 +18,7 @@ Template.leagueNew.events({
 
 			//show this result but route anyways
 			if (result.leagueExists)
-				throwError('This link has already been posted');
+				throwError('This league name has already been created');
 
 			Router.go('leaguePage', {_id:result._id});
 		});

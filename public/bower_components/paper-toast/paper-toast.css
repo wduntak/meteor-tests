@@ -78,3 +78,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   cursor: pointer;
   text-transform: uppercase;
 }
+
+#toast-warning-icon {
+  bottom: 4px;
+  margin-right: 5px;
+}

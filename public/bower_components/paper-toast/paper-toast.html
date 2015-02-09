@@ -95,7 +95,7 @@ Fired when the `paper-toast` has completely closed.
   <core-overlay id="overlay" autoFocusDisabled autoCloseDisabled="{{autoCloseDisabled}}" opened="{{opened}}" target="{{}}" transition="core-transition-bottom"></core-overlay>
 
   <div class="toast-container" horizontal layout>
-
+    <core-icon id="toast-warning-icon" icon="warning"></core-icon>
     <div class="toast-text" flex>{{text}}</div>
     
     <div class="toast-text toast-action" on-tap="{{dismiss}}">
