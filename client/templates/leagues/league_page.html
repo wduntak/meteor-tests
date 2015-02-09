@@ -1,3 +1,6 @@
 <template name="leaguePage">
 	{{> leagueItem}}
+	{{#if ownLeague}}
+		<a href="{{pathFor 'leagueEdit'}}"><paper-fab mini icon="settings"></paper-fab></a>
+	{{/if}}
 </template>
