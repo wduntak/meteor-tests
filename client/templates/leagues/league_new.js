@@ -19,7 +19,7 @@ Template.leagueNew.events({
 			//show this result but route anyways
 			if (result.leagueExists)
 				alert('This link has already been posted');
-			
+
 			Router.go('leaguePage', _id: result._id);
 		});
 	}

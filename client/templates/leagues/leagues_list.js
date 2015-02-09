@@ -1,5 +1,5 @@
 Template.leaguesList.helpers({
 	leagues: function() {
-		return Leagues.find();
+		return Leagues.find({}, {sort: {created: -1}});
 	}
 });
