@@ -11,6 +11,10 @@ Template.leagueNew.events({
 			// name: "Ryerson"
 		};
 
+		var errors = validateLeague(league);
+		if (errors.name || errors.url || errors.address)
+			return Session.set('leagueSubmitErrors', errors);
+
 		Meteor.call('leagueInsert', league, function(error, result) {
 			//display the error to the user and abort
 			if (error)
@@ -22,5 +26,18 @@ Template.leagueNew.events({
 
 			Router.go('leaguePage', {_id:result._id});
 		});
+	}
+});
+
+Template.leagueNew.created = function() {
+	Session.set('leagueSubmitErrors', {});
+}
+
+Template.leagueNew.helpers({
+	errorMessage: function(field) {
+		return Session.get('leagueSubmitErrors')[field];
+	},
+	errorClass: function(field) {
+		return !!Session.get('leagueSubmitErrors')[field] ? 'has-error' : '';
 	}
 });

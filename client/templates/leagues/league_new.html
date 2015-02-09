@@ -1,14 +1,23 @@
 <template name="leagueNew">
   <form>
-	<paper-input-decorator label="Name">
-        <input is="core-input" name="name">
+  <div class="{{errorClass 'name'}}">
+  	<paper-input-decorator label="Name">
+      <input is="core-input" name="name">
     </paper-input-decorator>
-	<paper-input-decorator label="Address">
-        <input is="core-input" name="address">
-    </paper-input-decorator>
-	<paper-input-decorator label="Url">
-        <input is="core-input" name="url">
-    </paper-input-decorator>
+      <span class="help-block">{{errorMessage 'name'}}</span>
+  </div>
+  <div class="{{errorClass 'address'}}">
+  	<paper-input-decorator label="Address">
+          <input is="core-input" name="address">
+          <span class="help-block">{{errorMessage 'address'}}</span>
+      </paper-input-decorator>
+  </div>
+  <div class="{{errorClass 'url'}}">
+  	<paper-input-decorator label="Url">
+          <input is="core-input" name="url">
+          <span class="help-block">{{errorMessage 'url'}}</span>
+      </paper-input-decorator>
+  </div>
     <input type="submit" value="Submit">
   </form>
 </template>

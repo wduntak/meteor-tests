@@ -34,3 +34,8 @@ core-toolbar {
 	left: 0;
 	width: 100%;
 }
+
+.help-block {
+	font-size: 0.7em;
+	color: red;
+}
