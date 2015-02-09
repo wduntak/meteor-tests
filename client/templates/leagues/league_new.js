@@ -9,9 +9,13 @@ Template.leagueNew.events({
 			// url: "ryerson.ca",
 			// address: "1000 Yonge st.",
 			// name: "Ryerson"
-		}
+		};
 
-		league._id = Leagues.insert(league);
-		Router.go('leaguePage', league);
+		Meteor.call('leagueInsert', league, function(error, result) {
+			if (error)
+				return alert(error.reason);
+
+			Router.go('leaguePage', _id: result._id);
+		});
 	}
 });
