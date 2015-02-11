@@ -31,7 +31,7 @@ Template.leagueEdit.events({
 		Leagues.update(currentLeagueId, {$set: leagueProperties}, function(error) {
 			if (error) {
 				//display the error to the user and abort
-				Errors.throw(error.reason);
+				throwError(error.reason);
 			} else {
 				Router.go('leaguePage', {_id: currentLeagueId});
 			}

@@ -18,11 +18,11 @@ Template.leagueNew.events({
 		Meteor.call('leagueInsert', league, function(error, result) {
 			//display the error to the user and abort
 			if (error)
-				Errors.throw(error.reason);
+				return throwError(error.reason);
 
 			//show this result but route anyways
 			if (result.leagueExists)
-				Errors.throw('This league name has already been created');
+				throwError('This league name has already been created');
 
 			Router.go('leaguePage', {_id:result._id});
 		});
